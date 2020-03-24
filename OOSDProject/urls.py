@@ -20,9 +20,8 @@ from Hospital import viewsHospital
 from UpAdmin import viewsUpAdmin
 
 urlpatterns = [
-    path('', include('Hospital.urls'))
     path('admin/', admin.site.urls),
     path('SuperAdmin/', include('BirthRegisterSystem.urls')),
-    path('Hospital/', include('Hospital.urls')),
+    path('', include('Hospital.urls')),
     path('UpAdmin/', include('UpAdmin.urls')),
 ]
