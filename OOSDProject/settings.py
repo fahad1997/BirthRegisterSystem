@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'BirthRegisterSystem.apps.BirthregistersystemConfig',
     'UpAdmin.apps.UpadminConfig',
     'Hospital.apps.HospitalConfig',
+    'Login.apps.LoginConfig'
 ]
 
 MIDDLEWARE = [

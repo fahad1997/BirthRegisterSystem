@@ -18,10 +18,12 @@ from django.urls import path, include
 from BirthRegisterSystem import views
 from Hospital import viewsHospital
 from UpAdmin import viewsUpAdmin
+from Login import viewsLogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('SuperAdmin/', include('BirthRegisterSystem.urls')),
-    path('', include('Hospital.urls')),
+    path('Hospitals/', include('Hospital.urls')),
     path('UpAdmin/', include('UpAdmin.urls')),
+    path('', include('Login.urls')),
 ]

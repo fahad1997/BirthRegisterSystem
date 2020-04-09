@@ -13,8 +13,10 @@ urlpatterns = [
          viewsHospital.PrintDeathCertificate, name='PrintDeathCertificate'),
     path('RequestForUpdate/', viewsHospital.RequestForUpdate,
          name='RequestForUpdate'),
-    path('ApplyBirthCertificateForm/', viewsHospital.ApplyBirthCertificateForm,
-         name='ApplyBirthCertificateForm'),
+    path('RequestForUpdate/', viewsHospital.RequestForUpdate,
+         name='RequestForUpdate'),
+    path('ScanCertificate/', viewsHospital.ScanCertificate,
+         name='ScanCertificate'),
 
     path('GetDistrict/<division_name>',
          viewsHospital.getDistrict, name="GetDistrict"),

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -36,7 +37,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -59,7 +60,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/Hospital/ScanCertificate/">
                     <ion-icon name="contact"></ion-icon>
                     <span>Scan Hand Written Certificate</span>
@@ -144,46 +145,30 @@
                                 </a>
                             </div>
                         </li>
-
                     </ul>
                 </nav>
 
-                <center><h1><b>Print Birth Certificate Request</b></h1></center>
+                <form method="post" action="/Hospital/ApplyBirthCertificateForm/">
+                {% csrf_token %}
                 <div class="container-fluid">
-                    <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Father Name</th>
-                        <th>Father NID</th>
-                        <th>Mother Name</th>
-                        <th>Religion</th>
-                        <th>Date of Birth</th>
-                        <th>Union</th>
-                        <th>Decision</th>
-                    </tr>
-
-                    {% for childinfos in childInfo %}
-                    <tr>
-                        <td>{{ childinfos.Name }}</td>
-                        <td>{{ childinfos.Father_name }}</td>
-                        <td>{{ childinfos.Father_NID }}</td>
-                        <td>{{ childinfos.Mother_name }}</td>
-                        <td>{{ childinfos.Religion }}</td>
-                        <td>{{ childinfos.Birth_Date }}</td>
-                        <td>{{ childinfos.Union_name }}</td>
-                        {% with id=childinfos.id %}
-                        {% endwith %}
-                        <td>
-                            <a href="#">Print</a></button>
-                        </td>
-                    </tr>
-                    {% endfor%}
-                    </table>
+                    <center>
+                    <h4>Type URL</h4>
+                    <div class="input-group mb-3">
+                        <input name="name" type="text" class="form-control" id="image-url" aria-describedby="basic-addon3">
+                    </div>
+                        <button id="submitAddHospital" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text">Submit URL</span>
+                        </button>
+                    </center>
                 </div>
+                <form>
             </div>
         </div>
     </div>
 {% load static %}
 <script src="{% static 'vendor/jquery/jquery.js' %}"></script>
-
+<script src="{% static 'js/Hospital.js' %}"></script>
 {% endblock content %}

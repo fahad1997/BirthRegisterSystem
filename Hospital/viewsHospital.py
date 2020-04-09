@@ -12,6 +12,10 @@ def AddHospital(request):
     return render(request, 'HospitalIndex.html')
 
 
+def ScanCertificate(request):
+    return render(request, 'Scan.html')
+
+
 def ApplyBirthCertificate(request):
     Division = Area.objects.values(
         'Division_name').distinct().order_by('Division_name')
